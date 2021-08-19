@@ -13,7 +13,7 @@ from pytorch_pretrained.optimization import BertAdam
 def init_network(model, method='xavier', exclude='embedding', seed=123):
     for name, w in model.named_parameters():
         if exclude not in name:
-            if len(w.size()) < 2:
+            if len(w.size()) <2:
                 continue
             if 'weight' in name:
                 if method == 'xavier':
